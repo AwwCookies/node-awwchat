@@ -16,35 +16,33 @@ html, body {
     background-color: aqua;
 }
 
+.messages {
+    background-color: darkgrey;
+}
+
 .channel-list-sidebar {
-    vertical-align: top;
     position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    display: inline-block;
-    float: left;
-    width: 15%;
     background-color: red;
+    width: 10%;
+    /*display: inline-block;*/
     overflow-y: auto;
-    height: 100%;
+    max-height: 100%;
 }
 
 .user-list-sidebar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
     vertical-align: top;
-    display: inline-block;
+    position: fixed;
+    right: 0;
+    display: flex;
     float: right;
     width: 15%;
     background-color: aquamarine;
     overflow-y: auto;
-    height: 100%;
+    /*max-height: 100%;*/
 }
 
 .input-bar {
+    display: inline-block;
     width: 95%;
     position: absolute;
     bottom: 0px;
