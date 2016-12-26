@@ -13,7 +13,6 @@
     "express": "^4.14.0",
     "install": "^0.8.4",
     "lodash": "^4.17.3",
-    "semantic-ui": "^2.2.7",
     "socket.io": "^1.7.2",
     "validator": "^6.2.0"
   }
