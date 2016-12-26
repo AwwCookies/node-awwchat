@@ -18,22 +18,29 @@ html, body {
 
 .channel-list-sidebar {
     vertical-align: top;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
     display: inline-block;
     float: left;
     width: 15%;
     background-color: red;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 100%;
 }
 
 .user-list-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
     vertical-align: top;
     display: inline-block;
     float: right;
     width: 15%;
     background-color: aquamarine;
-    bottom: 0px;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 100%;
 }
 
