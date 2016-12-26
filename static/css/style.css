@@ -1,0 +1,48 @@
+body {
+    background-color: #eee;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.topic-label {
+    width: 100%;
+    text-align: center;
+    display: block;
+    background-color: aqua;
+}
+
+.channel-list-sidebar {
+    vertical-align: top;
+    display: inline-block;
+    float: left;
+    width: 15%;
+    background-color: red;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.user-list-sidebar {
+    vertical-align: top;
+    display: inline-block;
+    float: right;
+    width: 15%;
+    background-color: aquamarine;
+    bottom: 0px;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.input-bar {
+    width: 95%;
+    position: absolute;
+    bottom: 0px;
+}
+
+.input {
+    width: 100%;
+}
