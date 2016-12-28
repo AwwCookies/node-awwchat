@@ -4,169 +4,106 @@
     <meta charset="UTF-8">
     <title>AwwChat</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/alertify.css">
+    <link rel="stylesheet" href="/css/themes/default.css">
+    <script src="/js/alertify.min.js"></script>
+    <script src="/js/jquery-3.1.1.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/mustache.min.js"></script>
     <script src="/js/client.js"></script>
 </head>
 <body>
 <div class="client-window">
-    <div class="top-bar"><label class="topic-label">This is the topic</label></div>
-    <div class="channel-list-sidebar">
-        <ol class="channel-list">
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-            <li class="channel-list-item">#Aww</li>
-        </ol>
+    <div class="topic-bar">
+        <label class="topic-label">This is the topic</label>
     </div>
-    <div class="user-list-sidebar">
-        <ol class="user-list">
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-            <li class="user-list-item">AwwCookies</li>
-        </ol>
-    </div>
-    <div class="messages">
-        Hello
+    <div class="content-wrapper">
+
+        <div class="channel-list-sidebar">
+            <div>
+                <h2 align="center">Channels</h2>
+            </div>
+            <div>
+                <ul class="channel-list">
+
+                </ul>
+            </div>
+        </div>
+        <div class="messages">
+                <ul class="message-list" id="message-list">
+
+                </ul>
+        </div>
+        <div class="user-list-sidebar">
+            <div>
+                <h2 align="center">User list 500 users</h2>
+            </div>
+            <div>
+                <ul class="user-list">
+
+                </ul>
+            </div>
+        </div>
+
     </div>
     <div class="input-bar">
-        <input class="input" type="text" placeholder="text goes here...."/>
+        <input class="input" id="input" type="text" placeholder="text goes here...."/ autofocus
+        autocomplete="off">
+        <button class="btn" onclick="inputParser()">Send</button>
     </div>
 </div>
+<script>
+  $("#input").keypress((e) => {
+    if (e.which === 13) {
+      inputParser();
+      scrollToBottom()
+    } else {
+      console.log(e.which);
+    }
+  });
+
+  //    $("#input").keydown((e) => {
+  //      e.preventDefault();
+  //      if (e.which === 38) {
+  //        console.log(`Up Arrow`);
+  //      } else if (e.which === 40) {
+  //        console.log(`Down Arrow`);
+  //      }
+  //  });
+</script>
+<script id="channel-template" type="x-tmpl-mustache">
+<div id="channel-{{channel}}" class="channel-list-item">
+    <a href="#" onclick="onChannelClick('{{channel}}')"><li>{{channel}}</li></a>
+</div>
+
+
+
+
+</script>
+<script id="message-template" type="x-tmpl-mustache">
+<!--<div id="message-{{id}}" class="channel-list-item">-->
+    <li>[{{timestamp}}] {{username}} -> {{channel}} {{text}}</li>
+<!--</div>-->
+
+
+
+
+</script>
+<script>
+function scrollToBottom() {
+  let messages = $(".messages");
+  messages.scrollTop(1000000000000000000000000000000000000000000000000000000000000)
+//  let newMessage = $("ol#message-list");
+//  let clientHeight = messages.prop("clientHeight");
+//  let scrollTop = messages.prop("scrollTop");
+//  let scrollHeight = messages.prop("scrollHeight");
+//  let newMessageHeight = newMessage.innerHeight();
+//  let lastMessageHeight = newMessage.prev().innerHeight();
+//
+//  if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight >= scrollHeight) {
+//    messages.scrollTop(scrollHeight)
+//  }
+}
+</script>
 </body>
 </html>

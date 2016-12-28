@@ -6,6 +6,7 @@ const express = require('express');
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
+const {User} = require("./user");
 
 const validator = require("validator");
 const _ = require("lodash");
@@ -23,19 +24,25 @@ app.get('/', function (req, res) {
 io.on('connection', function (socket) {
   console.log('a user connected');
   socket.emit("sendUserData"); // Request Initial user data
+
   socket.on("UserData", (userData, callback) => {
     if (validator.isAscii(userData.username)) {
       if (_.find(users, {username: userData.username})) {
         callback({status: "error" , message:"Username already taken"});
       } else {
-        socket.username = userData.username;
-        users.push({username: socket.username, socket});
-        callback({status: "success", message: `Connect to server as ${socket.username}`})
+        let user = new User(io, socket, userData.username).then((user) => {
+          user.joinChannel("#Aww");
+          user.joinChannel("#freenode");
+          user.joinChannel("#freenude");
+          users.push(user);
+        });
+        callback({status: "success", message: `Connect to server as ${userData.username}`})
       }
     } else {
       callback({status: "error", message: "Invalid Username"});
     }
-  })
+  });
+
 });
 
 http.listen(process.env.PORT || 3000, function () {
